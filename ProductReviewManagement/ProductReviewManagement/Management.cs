@@ -105,5 +105,27 @@ namespace ProductReviewManagement
                                   $"isLike    : {list.isLike}\n");
             }
         }
+
+        public void CreateProductReviewTable(List<ProductReview> objProductReviewList)
+        {
+            dataTable.Columns.Add("ProductID", typeof(Int32));
+            dataTable.Columns.Add("UserID", typeof(Int32));
+            dataTable.Columns.Add("Rating", typeof(double));
+            dataTable.Columns.Add("Review", typeof(string));
+            dataTable.Columns.Add("isLike", typeof(bool));
+            Console.WriteLine("**********Product Review Table**********\n");
+            foreach (ProductReview product in objProductReviewList)
+            {
+                dataTable.Rows.Add(product.ProductID, product.UserID, product.Rating, product.Review, product.isLike);
+            }
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                Console.WriteLine($"ProductID : {dataRow[0]}\n" +
+                                  $"UserID    : {dataRow[1]}\n" +
+                                  $"Rating    : {dataRow[2]}\n" +
+                                  $"Review    : {dataRow[3]}\n" +
+                                  $"isLike    : {dataRow[4]}\n");
+            }
+        }
     }
 }

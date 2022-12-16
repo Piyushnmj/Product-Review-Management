@@ -37,6 +37,7 @@
             objManagement.CountOfReviewForEachProductID(objProductReviewList);
             objManagement.RetriveOnlyProductIdAndReview(objProductReviewList);
             objManagement.SkipTopFiveRecords(objProductReviewList);
+            objManagement.CreateProductReviewTable(objProductReviewList);
         }
     }
 }
