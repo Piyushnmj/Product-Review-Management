@@ -30,6 +30,9 @@
                                   $"Review    : {list.Review}\n" +
                                   $"isLike    : {list.isLike}\n");
             }
+
+            Management objManagement = new Management();
+            objManagement.TopRecords(objProductReviewList);
         }
     }
 }
