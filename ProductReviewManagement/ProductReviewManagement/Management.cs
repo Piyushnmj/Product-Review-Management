@@ -132,6 +132,10 @@ namespace ProductReviewManagement
             }
         }
 
+        /// <summary>
+        /// UC10
+        /// </summary>
+        /// <param name="objProductReviewList">The object product review list.</param>
         public void AverageRatingForEachProductID(List<ProductReview> objProductReviewList)
         {
             var recordedData = (from productReviews in objProductReviewList group productReviews by (productReviews.ProductID) into product select new { ProductID = product.Key, AverageRating = product.Average(Key => Key.Rating) });
@@ -140,6 +144,24 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine($"ProductID      : {list.ProductID}\n" +
                                   $"Average Rating : {list.AverageRating}\n");
+            }
+        }
+
+        /// <summary>
+        /// UC11
+        /// </summary>
+        /// <param name="objProductReviewList">The object product review list.</param>
+        public void RetrieveReviewMessageNice(List<ProductReview> objProductReviewList)
+        {
+            var recordedData = (from productReviews in objProductReviewList where productReviews.Review.Contains("Nice") select productReviews);
+            Console.WriteLine("**********Nice Review**********\n");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine($"ProductID : {list.ProductID}\n" +
+                                  $"UserID    : {list.UserID}\n" +
+                                  $"Rating    : {list.Rating}\n" +
+                                  $"Review    : {list.Review}\n" +
+                                  $"isLike    : {list.isLike}\n");
             }
         }
     }

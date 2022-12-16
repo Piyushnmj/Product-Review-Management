@@ -39,6 +39,7 @@
             objManagement.SkipTopFiveRecords(objProductReviewList);
             objManagement.CreateProductReviewTable(objProductReviewList);
             objManagement.AverageRatingForEachProductID(objProductReviewList);
+            objManagement.RetrieveReviewMessageNice(objProductReviewList);
         }
     }
 }
