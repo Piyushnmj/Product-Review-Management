@@ -87,5 +87,19 @@ namespace ProductReviewManagement
                                   $"Review    : {list.Review}\n");
             }
         }
+
+        public void SkipTopFiveRecords(List<ProductReview> objProductReviewList)
+        {
+            var recordedData = (from productReviews in objProductReviewList orderby productReviews.ProductID ascending select productReviews).Skip(5);
+            Console.WriteLine("**********Selected Reviews**********\n");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine($"ProductID : {list.ProductID}\n" +
+                                  $"UserID    : {list.UserID}\n" +
+                                  $"Rating    : {list.Rating}\n" +
+                                  $"Review    : {list.Review}\n" +
+                                  $"isLike    : {list.isLike}\n");
+            }
+        }
     }
 }

@@ -36,6 +36,7 @@
             objManagement.SelectedRecords(objProductReviewList);
             objManagement.CountOfReviewForEachProductID(objProductReviewList);
             objManagement.RetriveOnlyProductIdAndReview(objProductReviewList);
+            objManagement.SkipTopFiveRecords(objProductReviewList);
         }
     }
 }
