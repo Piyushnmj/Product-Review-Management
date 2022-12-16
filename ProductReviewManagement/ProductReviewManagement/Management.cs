@@ -55,6 +55,10 @@ namespace ProductReviewManagement
             }
         }
 
+        /// <summary>
+        /// UC4
+        /// </summary>
+        /// <param name="objProductReviewList">The object product review list.</param>
         public void CountOfReviewForEachProductID(List<ProductReview> objProductReviewList)
         {
             var recordedData = (from productReviews in objProductReviewList
