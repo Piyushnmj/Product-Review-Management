@@ -74,7 +74,7 @@ namespace ProductReviewManagement
         }
 
         /// <summary>
-        /// UC5
+        /// UC5, UC7
         /// </summary>
         /// <param name="objProductReviewList">The object product review list.</param>
         public void RetriveOnlyProductIdAndReview(List<ProductReview> objProductReviewList)
@@ -88,6 +88,10 @@ namespace ProductReviewManagement
             }
         }
 
+        /// <summary>
+        /// UC6
+        /// </summary>
+        /// <param name="objProductReviewList">The object product review list.</param>
         public void SkipTopFiveRecords(List<ProductReview> objProductReviewList)
         {
             var recordedData = (from productReviews in objProductReviewList orderby productReviews.ProductID ascending select productReviews).Skip(5);
