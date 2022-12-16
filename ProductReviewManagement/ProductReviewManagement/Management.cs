@@ -54,5 +54,19 @@ namespace ProductReviewManagement
                                   $"isLike    : {list.isLike}\n");
             }
         }
+
+        public void CountOfReviewForEachProductID(List<ProductReview> objProductReviewList)
+        {
+            var recordedData = (from productReviews in objProductReviewList
+                              group productReviews by productReviews.ProductID into product
+                              select new { ProductID = product.Key, Count = product.Count() });
+
+            Console.WriteLine("**********Count Of Review For Each ProductID**********\n");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine($"ProductID : {list.ProductID}\n" +
+                                  $"Count     : {list.Count}\n");
+            }
+        }
     }
 }

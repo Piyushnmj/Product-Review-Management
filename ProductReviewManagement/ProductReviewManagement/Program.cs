@@ -34,6 +34,7 @@
             Management objManagement = new Management();
             objManagement.TopRecords(objProductReviewList);
             objManagement.SelectedRecords(objProductReviewList);
+            objManagement.CountOfReviewForEachProductID(objProductReviewList);
         }
     }
 }
