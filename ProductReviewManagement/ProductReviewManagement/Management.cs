@@ -56,7 +56,7 @@ namespace ProductReviewManagement
         }
 
         /// <summary>
-        /// UC4
+        /// UC4s
         /// </summary>
         /// <param name="objProductReviewList">The object product review list.</param>
         public void CountOfReviewForEachProductID(List<ProductReview> objProductReviewList)
