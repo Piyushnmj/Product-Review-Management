@@ -164,5 +164,23 @@ namespace ProductReviewManagement
                                   $"isLike    : {list.isLike}\n");
             }
         }
+
+        /// <summary>
+        /// UC12
+        /// </summary>
+        /// <param name="objProductReviewList">The object product review list.</param>
+        public void RetriveRecordsWithUserID10AndOrderByRating(List<ProductReview> objProductReviewList)
+        {
+            var recordedData = (from productReviews in objProductReviewList orderby productReviews.Rating descending where productReviews.UserID == 10 select productReviews);
+            Console.WriteLine("\n**********All Records With UserId = 10 and order By Rating**********\n");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine($"ProductID : {list.ProductID}\n" +
+                                  $"UserID    : {list.UserID}\n" +
+                                  $"Rating    : {list.Rating}\n" +
+                                  $"Review    : {list.Review}\n" +
+                                  $"isLike    : {list.isLike}\n");
+            }
+        }
     }
 }

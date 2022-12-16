@@ -18,7 +18,11 @@
                 new ProductReview() {ProductID = 7, UserID= 5, Rating=1, Review="Bad", isLike=false},
                 new ProductReview() {ProductID = 8, UserID= 4, Rating=2.5, Review="Bad", isLike=false},
                 new ProductReview() {ProductID = 9, UserID= 6, Rating=1, Review="Bad", isLike=false},
-                new ProductReview() {ProductID = 10, UserID= 3, Rating=1, Review="Bad", isLike=false},
+                new ProductReview() {ProductID = 10, UserID= 10, Rating=1, Review="Bad", isLike=false},
+                new ProductReview() {ProductID = 10, UserID= 10, Rating=4, Review="Good", isLike=true},
+                new ProductReview() {ProductID = 10, UserID= 10, Rating=2, Review="Bad", isLike=false},
+                new ProductReview() {ProductID = 10, UserID= 10, Rating=3.5, Review="Nice", isLike=true},
+                new ProductReview() {ProductID = 10, UserID= 10, Rating=5, Review="Good", isLike=true},
             };
 
             Console.WriteLine("\n**********All Product Reviews**********\n");
@@ -40,6 +44,7 @@
             objManagement.CreateProductReviewTable(objProductReviewList);
             objManagement.AverageRatingForEachProductID(objProductReviewList);
             objManagement.RetrieveReviewMessageNice(objProductReviewList);
+            objManagement.RetriveRecordsWithUserID10AndOrderByRating(objProductReviewList);
         }
     }
 }
