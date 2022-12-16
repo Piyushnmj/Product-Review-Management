@@ -106,6 +106,10 @@ namespace ProductReviewManagement
             }
         }
 
+        /// <summary>
+        /// UC8
+        /// </summary>
+        /// <param name="objProductReviewList">The object product review list.</param>
         public void CreateProductReviewTable(List<ProductReview> objProductReviewList)
         {
             dataTable.Columns.Add("ProductID", typeof(Int32));
@@ -125,6 +129,17 @@ namespace ProductReviewManagement
                                   $"Rating    : {dataRow[2]}\n" +
                                   $"Review    : {dataRow[3]}\n" +
                                   $"isLike    : {dataRow[4]}\n");
+            }
+        }
+
+        public void AverageRatingForEachProductID(List<ProductReview> objProductReviewList)
+        {
+            var recordedData = (from productReviews in objProductReviewList group productReviews by (productReviews.ProductID) into product select new { ProductID = product.Key, AverageRating = product.Average(Key => Key.Rating) });
+            Console.WriteLine("**********Average Rating**********\n");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine($"ProductID      : {list.ProductID}\n" +
+                                  $"Average Rating : {list.AverageRating}\n");
             }
         }
     }
