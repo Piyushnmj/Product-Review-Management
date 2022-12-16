@@ -15,10 +15,10 @@
                 new ProductReview() {ProductID = 4, UserID= 2, Rating=3, Review="Nice", isLike=true},
                 new ProductReview() {ProductID = 5, UserID= 3, Rating=3.5, Review="Nice", isLike=true},
                 new ProductReview() {ProductID = 6, UserID= 4, Rating=3.5, Review="Nice", isLike=true},
-                new ProductReview() {ProductID = 7, UserID= 5, Rating=1, Review="Bad", isLike=true},
-                new ProductReview() {ProductID = 8, UserID= 4, Rating=2.5, Review="Bad", isLike=true},
-                new ProductReview() {ProductID = 9, UserID= 6, Rating=1, Review="Bad", isLike=true},
-                new ProductReview() {ProductID = 10, UserID= 3, Rating=1, Review="Bad", isLike=true},
+                new ProductReview() {ProductID = 7, UserID= 5, Rating=1, Review="Bad", isLike=false},
+                new ProductReview() {ProductID = 8, UserID= 4, Rating=2.5, Review="Bad", isLike=false},
+                new ProductReview() {ProductID = 9, UserID= 6, Rating=1, Review="Bad", isLike=false},
+                new ProductReview() {ProductID = 10, UserID= 3, Rating=1, Review="Bad", isLike=false},
             };
 
             Console.WriteLine("\n**********All Product Reviews**********\n");
