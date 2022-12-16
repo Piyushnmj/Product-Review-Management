@@ -56,7 +56,7 @@ namespace ProductReviewManagement
         }
 
         /// <summary>
-        /// UC4s
+        /// UC4
         /// </summary>
         /// <param name="objProductReviewList">The object product review list.</param>
         public void CountOfReviewForEachProductID(List<ProductReview> objProductReviewList)
@@ -70,6 +70,21 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine($"ProductID : {list.ProductID}\n" +
                                   $"Count     : {list.Count}\n");
+            }
+        }
+
+        /// <summary>
+        /// UC5
+        /// </summary>
+        /// <param name="objProductReviewList">The object product review list.</param>
+        public void RetriveOnlyProductIdAndReview(List<ProductReview> objProductReviewList)
+        {
+            var recordedData = (from productReviews in objProductReviewList select (productReviews.ProductID, productReviews.Review));
+            Console.WriteLine("**********ProductId And Review**********\n");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine($"ProductID : {list.ProductID}\n" +
+                                  $"Review    : {list.Review}\n");
             }
         }
     }
